@@ -1,13 +1,4 @@
 #!/bin/bash
-onedark_black="#282c34"
-onedark_blue="#61afef"
-onedark_yellow="#e5c07b"
-onedark_red="#e06c75"
-onedark_white="#aab2bf"
-onedark_green="#98c379"
-onedark_visual_grey="#3e4452"
-onedark_comment_grey="#5c6370"
-
 get() {
    local option=$1
    local default_value=$2
@@ -58,7 +49,7 @@ setw "window-status-activity-attr" "none"
 
 setw "window-status-separator" ""
 
-set "window-style" "fg=$onedark_comment_grey"
+set "window-style" "fg=brightblack"
 set "window-active-style" "fg=white"
 
 set "pane-border-fg" "white"
@@ -81,8 +72,8 @@ status_widgets=$(get "@onedark_widgets")
 time_format=$(get "@onedark_time_format" "%R")
 date_format=$(get "@onedark_date_format" "%d/%m/%Y")
 
-set "status-right" "#[fg=white,bg=black,nounderscore,noitalics]#h #[fg=$onedark_visual_grey,bg=black]#[fg=$onedark_visual_grey,bg=$onedark_visual_grey]#[fg=white, bg=$onedark_visual_grey]${status_widgets} #[fg=green,bg=$onedark_visual_grey,nobold,nounderscore,noitalics]#[fg=black,bg=green,bold] ${date_format}  ${time_format} #[fg=yellow, bg=green]#[fg=red,bg=yellow]"
+set "status-right" "#[fg=green,bg=black,nounderscore,noitalics]#h #[fg=brightblack,bg=black]#[fg=brightblack,bg=brightblack]#[fg=white, bg=brightblack]${status_widgets} #[fg=green,bg=brightblack,nobold,nounderscore,noitalics]#[fg=black,bg=green,bold] ${date_format}  ${time_format} #[fg=yellow, bg=green]#[fg=red,bg=yellow]"
 set "status-left" "#[fg=black,bg=green,bold] #S #{prefix_highlight}#[fg=green,bg=black,nobold,nounderscore,noitalics]"
 
 set "window-status-format" "#[fg=black,bg=black,nobold,nounderscore,noitalics]#[fg=white,bg=black] #I  #W #[fg=black,bg=black,nobold,nounderscore,noitalics]"
-set "window-status-current-format" "#[fg=black,bg=$onedark_visual_grey,nobold,nounderscore,noitalics]#[fg=white,bg=$onedark_visual_grey,nobold] #I  #W #[fg=$onedark_visual_grey,bg=black,nobold,nounderscore,noitalics]"
+set "window-status-current-format" "#[fg=black,bg=brightblack,nobold,nounderscore,noitalics]#[fg=white,bg=brightblack,nobold] #I  #W #[fg=brightblack,bg=black,nobold,nounderscore,noitalics]"
